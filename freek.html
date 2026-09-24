@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Allows the page to display properly on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitLife - Fitness with AI</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+
+            /* Horizontal scrolling on small screens */
+            overflow-x: auto;
+            overflow-y: auto;
+        }
+
+        /* Main fixed desktop board */
+
+        .container {
+            width: 1100px;
+            min-width: 1100px;
+
+            margin: 30px auto;
+
+            display: grid;
+
+            grid-template-columns: 220px 340px 340px;
+            grid-template-rows: 200px 200px 200px;
+
+            gap: 20px;
+        }
+
+        /* Common box */
+
+        .box {
+            border-radius: 10px;
+            padding: 25px;
+            overflow: hidden;
+        }
+
+        /* ---------------- LEFT TOP ---------------- */
+
+        .box1 {
+            background-color: #fff0e6;
+        }
+
+        .box1 h2 {
+            font-size: 30px;
+            line-height: 1.05;
+            color: #111;
+            margin-top: 15px;
+        }
+
+        .box1 span {
+            color: #7650d8;
+            font-style: italic;
+        }
+
+        .button {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            background-color: #ffc45c;
+            color: #7650d8;
+
+            padding: 12px 20px;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+
+        /* ---------------- MAIN TOP ---------------- */
+
+        .box2 {
+            background-color: #7650d8;
+
+            color: white;
+
+            text-align: center;
+
+            padding-top: 35px;
+        }
+
+        .box2 h1 {
+            font-size: 42px;
+            line-height: 1.05;
+        }
+
+        .box2 h1 span {
+            color: #ffc45c;
+        }
+
+        .stars {
+            color: #ffc45c;
+
+            font-size: 25px;
+
+            margin-top: 20px;
+        }
+
+        .box2 p {
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+
+        /* ---------------- RIGHT TOP ---------------- */
+
+        .box3 {
+            background-color: #ddd0fa;
+        }
+
+        .box3 h2 {
+            font-size: 25px;
+            line-height: 1.05;
+        }
+
+        .chart {
+            background-color: white;
+
+            height: 110px;
+
+            margin-top: 18px;
+
+            border-radius: 12px;
+
+            padding: 15px;
+
+            display: flex;
+
+            align-items: end;
+
+            justify-content: center;
+
+            gap: 18px;
+        }
+
+        .bar {
+            width: 18px;
+
+            background-color: #7650d8;
+
+            border-radius: 10px 10px 0 0;
+        }
+
+        .bar1 {
+            height: 35px;
+        }
+
+        .bar2 {
+            height: 55px;
+        }
+
+        .bar3 {
+            height: 85px;
+        }
+
+        .bar4 {
+            height: 65px;
+        }
+
+        .bar5 {
+            height: 45px;
+        }
+
+        .box3 p {
+            font-size: 13px;
+            margin-top: 15px;
+        }
+
+
+        /* ---------------- LEFT MIDDLE ---------------- */
+
+        .box4 {
+            background-color: #ffc45c;
+        }
+
+        .box4 h2 {
+            font-size: 30px;
+            line-height: 1.05;
+        }
+
+        .message {
+            background-color: white;
+
+            border-radius: 12px;
+
+            padding: 15px;
+
+            margin-top: 20px;
+
+            font-size: 13px;
+        }
+
+        .message p {
+            margin-bottom: 10px;
+        }
+
+        .message p:last-child {
+            margin-bottom: 0;
+            color: #7650d8;
+            font-weight: bold;
+        }
+
+
+        /* ---------------- CENTER MIDDLE ---------------- */
+
+        .box5 {
+            background-color: white;
+        }
+
+        .box5 h2 {
+            font-size: 25px;
+            line-height: 1.1;
+        }
+
+        .exercise {
+            margin-top: 25px;
+
+            display: flex;
+
+            justify-content: space-around;
+
+            font-size: 35px;
+        }
+
+        .box5 p {
+            margin-top: 20px;
+
+            font-size: 14px;
+
+            color: #555;
+        }
+
+
+        /* ---------------- RIGHT MIDDLE ---------------- */
+
+        .box6 {
+            background-color: #ffc45c;
+        }
+
+        .box6 h2 {
+            font-size: 26px;
+            line-height: 1.05;
+        }
+
+        .days {
+            background-color: white;
+
+            margin-top: 25px;
+
+            padding: 15px;
+
+            border-radius: 10px;
+
+            color: #7650d8;
+
+            font-size: 20px;
+
+            text-align: center;
+        }
+
+
+        /* ---------------- BOTTOM LEFT ---------------- */
+
+        .box7 {
+            background-color: white;
+        }
+
+        .box7 h1 {
+            font-size: 45px;
+
+            color: #7650d8;
+
+            margin-top: 20px;
+        }
+
+        .box7 p {
+            color: #555;
+
+            margin-top: 10px;
+        }
+
+        .people {
+            font-size: 30px;
+
+            margin-top: 25px;
+        }
+
+
+        /* ---------------- BOTTOM RIGHT ---------------- */
+
+        .box8 {
+            background-color: #7650d8;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 25px;
+        }
+
+        .weight {
+            background-color: white;
+
+            color: #111;
+
+            width: 150px;
+
+            height: 145px;
+
+            border-radius: 10px;
+
+            padding: 15px;
+        }
+
+        .weight h3 {
+            font-size: 16px;
+        }
+
+        .weight h2 {
+            color: #7650d8;
+
+            margin-top: 15px;
+
+            font-size: 22px;
+        }
+
+        .small-bars {
+            height: 55px;
+
+            display: flex;
+
+            align-items: end;
+
+            gap: 7px;
+
+            margin-top: 10px;
+        }
+
+        .small-bars div {
+            width: 15px;
+
+            background-color: #7650d8;
+
+            border-radius: 5px 5px 0 0;
+        }
+
+        .small-bars div:nth-child(1) {
+            height: 20px;
+        }
+
+        .small-bars div:nth-child(2) {
+            height: 28px;
+        }
+
+        .small-bars div:nth-child(3) {
+            height: 36px;
+        }
+
+        .small-bars div:nth-child(4) {
+            height: 45px;
+        }
+
+        .small-bars div:nth-child(5) {
+            height: 52px;
+        }
+
+        .goal {
+            width: 180px;
+        }
+
+        .goal h2 {
+            font-size: 28px;
+
+            line-height: 1.05;
+        }
+
+        .goal p {
+            margin-top: 12px;
+
+            font-size: 13px;
+
+            opacity: 0.9;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <!-- 1. LEFT TOP -->
+        <div class="box box1">
+
+            <h2>
+                Build your<br>
+                body<br>
+                <span>stronger.</span>
+            </h2>
+
+            <a href="#" class="button">
+                Start Workout →
+            </a>
+
+        </div>
+
+
+        <!-- 2. MAIN TOP -->
+        <div class="box box2">
+
+            <h1>
+                Fitness <span>10X</span><br>
+                Faster with AI
+            </h1>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                Over 4,000 happy members
+            </p>
+
+        </div>
+
+
+        <!-- 3. RIGHT TOP -->
+        <div class="box box3">
+
+            <h2>
+                Workout<br>
+                Schedule
+            </h2>
+
+            <div class="chart">
+
+                <div class="bar bar1"></div>
+
+                <div class="bar bar2"></div>
+
+                <div class="bar bar3"></div>
+
+                <div class="bar bar4"></div>
+
+                <div class="bar bar5"></div>
+
+            </div>
+
+            <p>
+                Find the best time for your workout.
+            </p>
+
+        </div>
+
+
+        <!-- 4. LEFT MIDDLE -->
+        <div class="box box4">
+
+            <h2>
+                Train<br>
+                with AI.
+            </h2>
+
+            <div class="message">
+
+                <p>
+                    You: Give me a 5 day workout plan.
+                </p>
+
+                <p>
+                    AI Coach: Here's your personalized plan!
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- 5. CENTER MIDDLE -->
+        <div class="box box5">
+
+            <h2>
+                Track your<br>
+                fitness.
+            </h2>
+
+            <div class="exercise">
+                🏃 🏋️ 🧘
+            </div>
+
+            <p>
+                Track your daily exercises and stay active.
+            </p>
+
+        </div>
+
+
+        <!-- 6. RIGHT MIDDLE -->
+        <div class="box box6">
+
+            <h2>
+                Maintain a<br>
+                consistent<br>
+                routine.
+            </h2>
+
+            <div class="days">
+                ✓ &nbsp; ✓ &nbsp; ✓ &nbsp; ✓
+            </div>
+
+        </div>
+
+
+        <!-- 7. BOTTOM LEFT -->
+        <div class="box box7">
+
+            <h1>
+                +56%
+            </h1>
+
+            <p>
+                faster fitness progress
+            </p>
+
+            <div class="people">
+                💪 🏃 🏋️
+            </div>
+
+        </div>
+
+
+        <!-- 8. BOTTOM RIGHT -->
+        <div class="box box8">
+
+            <div class="weight">
+
+                <h3>
+                    Weight Progress
+                </h3>
+
+                <h2>
+                    89 → 75 KG
+                </h2>
+
+                <div class="small-bars">
+
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="goal">
+
+                <h2>
+                    Reach your<br>
+                    fitness goals<br>
+                    with consistency.
+                </h2>
+
+                <p>
+                    Train smarter. Eat better. Stay consistent.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
